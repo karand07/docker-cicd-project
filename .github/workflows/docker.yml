@@ -5,16 +5,16 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read   # ✅ important fix
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4   # ✅ updated version
-
-      - name: Set up Docker
-        run: docker --version
+        uses: actions/checkout@v4
 
       - name: Build Docker Images
         run: docker compose build

@@ -3,6 +3,7 @@ version: "3.9"
 services:
   backend:
     build: ./backend
+    image: karand07/backend:latest
     ports:
       - "5000:3000"  
     env_file:
@@ -15,6 +16,7 @@ services:
     restart: always
   frontend1:
     build: ./farmer_frontend
+    image: karand07/farmer-frontend:latest
     ports:
       - "3000:80"
     depends_on:
@@ -24,6 +26,7 @@ services:
     restart: always
   frontend2:
     build: ./company_frontend
+    image: karand07/company-frontend:latest
     ports:
       - "3001:80"
     depends_on:
@@ -33,6 +36,7 @@ services:
     restart: always
   frontend3:
     build: ./admin_frontend
+    image: karand07/admin-frontend:latest
     ports:
       - "3002:80"
     depends_on:
